@@ -1,0 +1,48 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  Exclude:
+    - '.bundle/*'
+    - '**.gem'
+    - '**.gemspec'
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'Rakefile'
+    - '.**'
+    - 'bin/**/*'
+    - 'cache/ruby/**/*'
+    - 'coverage/**/*'
+    - 'docs/**/*'
+    - 'pkg/**/*'
+    - 'samples/**/*'
+    - 'sig/**/*'
+    - 'spec/**/*'
+    - 'tmp/**'
+    - 'vendor/**/*'
+    - '**/*.tt'
+    - '**.yml'
+    - '**/**.bak'
+    - '**.rbs'
+    - '**.rbi'
+  # UseCache: true
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 12

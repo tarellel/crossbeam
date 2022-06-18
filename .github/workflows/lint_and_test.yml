@@ -1,0 +1,29 @@
+name: Test and linters
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1' # Not needed with a .ruby-version file
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+    ########################################
+    # Run linters against code
+    ########################################
+    - name: Rubocop
+      run: bundle exec rubocop
+    - name: Fasterer
+      run: bundle exec fasterer
+
+    ########################################
+    # Run RSpec/Tests
+    ########################################
+    - name: RSpec
+      run: bundle exec rspec spec

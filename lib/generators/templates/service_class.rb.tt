@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+class <%= class_name.classify %>
+  include Crossbeam
+<%- attributes.each do |attribute| -%>
+  option :<%= attribute.parameterize(separator: '_') %>
+<%- end -%>
+
+  def call
+    # ...
+  end
+end
