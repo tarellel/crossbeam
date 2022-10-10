@@ -19,7 +19,7 @@ module Crossbeam
 
     # Methods to load in the service object as class methods
     module ClassMethods
-      # @return [Hash]
+      # @return [Array]
       CB_ALLOWED_OUTPUTS = [NilClass, String, Symbol].freeze
       # Used to specify an attribute/instance variable that should be used too return instead of @result
       #

@@ -256,11 +256,11 @@ module Crossbeam
       def run_after_callbacks; end
 
       # Create a list of `after` callback methods and/or blocks
-      sig { returns(T::Hash[T.untyped, T.untyped]) }
+      sig { returns(T::Array[T.untyped]) }
       def after_callbacks; end
 
       # Create a list of `before` callback methods and/or blocks
-      sig { returns(T::Hash[T.untyped, T.untyped]) }
+      sig { returns(T::Array[T.untyped]) }
       def before_callbacks; end
 
       # Loopthrough and run all the classes listed callback methods

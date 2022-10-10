@@ -22,7 +22,7 @@ module Crossbeam
       # Add callback `before` method or block
       #
       # @param callbacks [Hash]
-      # @return [void]
+      # @return [Void]
       # @yield An optional block to instance_exec(&block) || instance_eval(&block)
       def before(*callbacks, &block)
         callbacks << block if block
@@ -32,7 +32,7 @@ module Crossbeam
       # Add callback `after` method or block
       #
       # @param callbacks [Hash]
-      # @return [void]
+      # @return [Void]
       # @yield An optional block to instance_exec(&block) || instance_eval(&block)
       def after(*callbacks, &block)
         callbacks << block if block
@@ -41,7 +41,7 @@ module Crossbeam
 
       # Call all callbacks before `#call` is referenced (methods, blocks, etc.)
       #
-      # @return [void]
+      # @return [Void]
       def run_before_callbacks
         # run_callbacks(self.class.before_callbacks)
         run_callbacks(before_callbacks)
@@ -49,21 +49,21 @@ module Crossbeam
 
       # Call and run all callbacks after `#call` has ran
       #
-      # @return [void]
+      # @return [Void]
       def run_after_callbacks
         run_callbacks(after_callbacks)
       end
 
       # Create a list of `after` callback methods and/or blocks
       #
-      # @return [Hash]
+      # @return [Array]
       def after_callbacks
         @after_callbacks ||= []
       end
 
       # Create a list of `before` callback methods and/or blocks
       #
-      # @return [Hash]
+      # @return [Array]
       def before_callbacks
         @before_callbacks ||= []
       end
@@ -71,7 +71,7 @@ module Crossbeam
       # Loopthrough and run all the classes listed callback methods
       #
       # @param callbacks [Array<String, Symbol>] a list of methods to be called
-      # @return [void]
+      # @return [Void]
       def run_callbacks(callbacks)
         callbacks.each { |callback| run_callback(callback) }
       end
@@ -82,7 +82,7 @@ module Crossbeam
       #
       # @param callback [Symbol]
       # @param options [Hash]
-      # @return [void]
+      # @return [Void]
       def run_callback(callback, *options)
         # Ensure the initialize instance class has been called and passed
         return unless @klass
