@@ -5,7 +5,7 @@ if defined?(Rails)
   require 'rails/generators'
 
   # Used to generate a Rails service object
-  class CrossbeamGenerator < ::Rails::Generators::Base
+  class CrossbeamGenerator < Rails::Generators::Base
     source_root File.expand_path(File.join('.', 'templates'), File.dirname(__FILE__))
 
     argument :class_name, type: :string
