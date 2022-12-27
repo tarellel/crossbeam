@@ -60,7 +60,8 @@ module Crossbeam
       #
       # @return [Void]
       def build_error_list
-        return unless @klass && @klass&.errors&.any?
+        return if @klass.nil?
+        return unless @klass&.errors&.any?
 
         @klass.errors.each do |error|
           # options is usually passed with an ActiveRecord validation error
