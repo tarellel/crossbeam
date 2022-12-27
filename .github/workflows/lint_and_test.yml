@@ -49,3 +49,5 @@ jobs:
         run: bundle exec rubocop
       - name: Fasterer
         run: bundle exec fasterer
+      - name: Sord/Yard
+        run: bundle exec sord defs.rbi
