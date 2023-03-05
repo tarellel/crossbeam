@@ -5,8 +5,8 @@ require_relative 'lib/crossbeam/version'
 Gem::Specification.new do |spec|
   spec.name = 'crossbeam'
   spec.version = Crossbeam::VERSION
-  spec.authors = ['Brandon Hicks']
-  spec.email = ['tarellel@gmail.com']
+  spec.authors = ['Brandon Hicks'].freeze
+  spec.email = ['tarellel@gmail.com'].freeze
   spec.summary = 'An easy way to create and run service objects with callbacks, validations, errors, and responses'
   spec.description = spec.summary
   spec.homepage = 'https://github.com/tarellel/crossbeam'
