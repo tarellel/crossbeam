@@ -89,11 +89,11 @@ module Crossbeam
     # Used to determine the current state of the service call
     #
     # @return [Boolean]
-    define_method("#{attr}?") do
+    define_method(:"#{attr}?") do
       return false unless @result
 
       attr = attr.to_s
-      @result.send("#{attr}?".to_sym) || false
+      @result.send(:"#{attr}?") || false
     end
   end
 

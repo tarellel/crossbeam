@@ -18,9 +18,9 @@ group :development do
   gem 'guard-rubocop', '~> 1.5'   # Runs rubocop tests against your code as files are changed
   gem 'guard-yard'
 
-  gem 'rubocop', '>= 1.27', require: false
-  gem 'rubocop-performance'
-  gem 'rubocop-rspec'
+  gem 'rubocop', '>= 1.27'
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rspec', require: false
   gem 'yard'
 
   gem 'debug'

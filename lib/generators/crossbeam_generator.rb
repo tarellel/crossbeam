@@ -19,7 +19,7 @@ if defined?(Rails)
 
     # @return [void]
     def generate_test
-      return unless Rails&.application&.config&.generators&.test_framework == :rspec
+      return unless Rails.application&.config&.generators&.test_framework == :rspec
 
       template 'service_spec.rb.tt', "spec/services/#{filename}_spec.rb", force: true
     end

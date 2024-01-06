@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './error'
+require_relative 'error'
 
 module Crossbeam
   # For forcing specific output after `#call`
@@ -51,9 +51,9 @@ module Crossbeam
       # @return [Hash]
       def set_results_output
         return unless @klass
-        return unless output? && @klass.instance_variable_defined?("@#{output_param}")
+        return unless output? && @klass.instance_variable_defined?(:"@#{output_param}")
 
-        @result.results = @klass.instance_variable_get("@#{output_param}")
+        @result.results = @klass.instance_variable_get(:"@#{output_param}")
       end
 
       # Add errors to @result.errors
@@ -78,14 +78,14 @@ module Crossbeam
       # @return [Void]
       def reassign_results
         @result.results = nil
-        @result.results = @klass.instance_variable_get("@#{output_param}") if specified_output?
+        @result.results = @klass.instance_variable_get(:"@#{output_param}") if specified_output?
       end
 
       # Does the klass have an assigned output
       #
       # @return [Boolean]
       def specified_output?
-        output? && @klass.instance_variable_defined?("@#{output_param}")
+        output? && @klass.instance_variable_defined?(:"@#{output_param}")
       end
 
       # Used hold the parameter which can/will be used instead of @result
