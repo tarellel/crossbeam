@@ -2,8 +2,8 @@
 
 require 'active_model'
 # Crossbeam files
-require_relative './error'
-require_relative './errors'
+require_relative 'error'
+require_relative 'errors'
 
 module Crossbeam
   # Used as a data container to hold a service calls results, errors, etc.
