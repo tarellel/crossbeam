@@ -1,5 +1,7 @@
 name: Test and linters
-on: [pull_request]
+on:
+  workflow_dispatch:
+  pull_request:
 
 jobs:
   test:
