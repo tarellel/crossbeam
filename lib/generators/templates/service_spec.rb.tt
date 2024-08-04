@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe <%= class_name.classify %>, type: :helper do
+RSpec.describe <%= class_name.classify %>, type: :<%= class_type_label %> do
   subject { described_class.call }
 
   describe 'an example' do

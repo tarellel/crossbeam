@@ -1,7 +1,7 @@
 # typed: strong
 # Crossbeam module to include with your service classes
 module Crossbeam
-  VERSION = T.let('0.1.0', T.untyped)
+  VERSION = T.let('0.1.2', T.untyped)
 
   # Used to include/extend modules into the current class
   # 
@@ -287,6 +287,14 @@ class CrossbeamGenerator < Rails::Generators::Base
 
   sig { void }
   def generate_test; end
+
+  # Used to deteremine if the class is a command vs service class
+  sig { returns(String) }
+  def class_directory; end
+
+  # Return the label of the class type
+  sig { returns(String) }
+  def class_type_label; end
 
   # Returns a string to use as the service classes file name
   sig { returns(String) }

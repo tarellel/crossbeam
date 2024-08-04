@@ -279,6 +279,16 @@ class IdentityCheck
 end
 ```
 
+Not everyone wants to have their classes output to `app/services/**` sometimes you may prefer the class to be output to `app/commands/**`. Depending on the functionality you working on command classes are very regularly used design pattern.
+
+The generator option in order to generate your classes as a command can be flagged with `--command`.
+
+```shell
+rails g crossbream AgeCheck --command
+```
+
+Running this will generate a file in `app/commands/age_check.rb` that you can use as a command class.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/tarellel/crossbeam.
