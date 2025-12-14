@@ -15,10 +15,10 @@ group :development do
   gem 'guard-rspec'               # Runs tests against your application if spec files are changed
   gem 'guard-bundler'             # Runs bundle install if anything you Gemfile is changed
   gem 'guard-fasterer'
-  gem 'guard-rubocop', '~> 1.5'   # Runs rubocop tests against your code as files are changed
+  gem 'guard-rubocop'             # Runs rubocop tests against your code as files are changed
   gem 'guard-yard'
 
-  gem 'rubocop', '>= 1.27'
+  gem 'rubocop'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rspec', require: false
   gem 'yard'
